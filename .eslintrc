@@ -1,0 +1,64 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true
+	},
+	"extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"globals": {
+		"document": true,
+		"window": true
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"plugins": ["react", "prettier", "html"],
+	"rules": {
+		"prettier/prettier": ["error"],
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1,
+				"VariableDeclarator": { "var": 2, "let": 2, "const": 3 },
+				"ignoredNodes": ["ConditionalExpression"],
+				"outerIIFEBody": 1,
+				"ArrayExpression": 1,
+				"ObjectExpression": 1,
+				"offsetTernaryExpressions": true,
+				"flatTernaryExpressions": true,
+				"ImportDeclaration": 1,
+				"CallExpression": { "arguments": "first" },
+				"FunctionExpression": { "parameters": "first" },
+				"FunctionDeclaration": { "parameters": "first" },
+				"MemberExpression": 1
+			}
+		],
+
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"],
+		"wrap-iife": ["error", "any"],
+		"react/react-in-jsx-scope": "off"
+		//"react/jsx-sort-props": [
+		//	"error",
+		//	{
+		//		"callbacksLast": true,
+		//		"shorthandFirst": true,
+		//		"shorthandLast": false,
+		//		"ignoreCase": false,
+		//		"noSortAlphabetically": false,
+		//		"reservedFirst": true
+		//	}
+		//],
+	}
+}
