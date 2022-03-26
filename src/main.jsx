@@ -1,16 +1,16 @@
-import { Provider } from "jotai";
+import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
-import { render } from "react-dom";
+import { Provider } from "jotai";
 import App from "./App";
 import "@/css/main.scss";
 
-const entry = document.getElementById("app");
+const container = document.getElementById("app");
+const entry = createRoot(container);
 
-render(
+entry.render(
 	<StrictMode>
 		<Provider>
 			<App />
 		</Provider>
 	</StrictMode>,
-	entry,
 );
